@@ -9,19 +9,11 @@
 
 </head>
 <body>
-	<img id="mg-imgBG" src="img/Avenger.png" />
+	<img id="mg-imgBG" src="img/Avenger-blur.png" />
 	<div id="mg-scanlineBG"></div>
 	<img id="mg-gridBG" src="img/new-dot.png" alt="" />
 	<div id="mg-dotBG"></div>
-<div id="mg-modal" class="">
-		<h3 class="mg-modal-title">Modal Window</h3>
-		<div class="mg-modal-content">
-			<p>This is some information you need to know.</p>
-			<div class="container">
-				<button  id="closeModal" class="simple right">OK</button>
-			</div>
-		</div>
-	</div>
+
 	<div id="mg-wrapper">
 		<div class="container">
 			<div class="mainContent">
@@ -30,10 +22,14 @@
 					<p>This is a guide to using the mobiStyle HTML styles. The mobiStyle style does not contain any css for columns or layout. Therefore, it should work in concert with Foundation, Bootstrap, or whatever custom framework you choose. The mg class names are all prefixed with <code>mg-</code> so they should remain fairly unique and not interfere with your frameworks.</p>
 					<p>This guide is also not responsive. That's not the point of mobiStyle. mS is purely here to recreate the effects seen in the mobiGlas design docs presented by RSI/CIG.</p>
 					<p><small>Note: This guide DOES use some custom styles for layout. They are <strong>not</strong> a part of the mobiStyle, so ignore them when trying to integrate mobiStyle into your project</small></p>
+
+					<h2>Loading mobiStyle</h2>
+					<p>Just load <code>jquery.mobistyle-min.js</code> at the end of your body, and call <code>$(document).mobiStyle();</code>. That's it! If you want SVG animations for your buttons, be sure to load <a href="http://snapsvg.io/">Snap.svg</a>.</p>
+					<p>If there are features you don't want to use, you may pick and choose from the javascript files, and only load the ones you want. Or, you can ditch the js altogether, and just use the css! It's up to you!</p>
 				</div>
-				<div class="">
-			<p><small>mobiGlas and all related elements are property of Cloud Imperium Games and Roberts Space Industries Corp. Special thanks to <a href="reddit.com/u/AlterEcho_bhvr">/u/AlterEcho_bhvr</a> and his comrades at Behavior Interactive for the awesome work they've done making mobiGlas a reality!</small></p>
-		</div>
+				
+				<p><small>mobiGlas and all related elements are property of Cloud Imperium Games and Roberts Space Industries Corp. Special thanks to <a href="reddit.com/u/AlterEcho_bhvr">/u/AlterEcho_bhvr</a> and his comrades at Behavior Interactive for the awesome work they've done making mobiGlas a reality!</small></p>
+		
 			</div>
 			<div class="mg-sidebar">
 				<div class="mg-panel">
@@ -55,10 +51,12 @@
 		
 	</div>
 	
-	<div id="mg-modalOverlay"></div>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="scripts/snap.svg-min.js"></script>
-	<script src="scripts/mG.js"></script>
-	
+	<script src="scripts/min/jquery.mobiStyle-min.js"></script>
+	<script>
+		$(document).mobiStyle();
+	</script>
 </body>
 </html>

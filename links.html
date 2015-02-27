@@ -9,7 +9,7 @@
 
 </head>
 <body>
-	<img id="mg-imgBG" src="img/Avenger.png" />
+	<img id="mg-imgBG" src="img/Avenger-blur.png" />
 	<div id="mg-scanlineBG"></div>
 	<img id="mg-gridBG" src="img/new-dot.png" alt="" />
 	<div id="mg-dotBG"></div>
@@ -20,27 +20,28 @@
 				<h1>Links &amp; Navigation</h1>
 				<h2>Links and buttons</h2>
 				<p><a href="#">This is a link</a></p>
-				<p>There are several types of buttons available, based on the various roles needed:</p>
+				<p>There are several types of buttons available, based on the various roles needed. If you want to use any of the shaped buttons, you will either need to use the minified mobiStyle, or include the svg and button libraries. For the animated effects, you will also need <a href="http://snapsvg.io/">Snap</a></p>
+				<p>To use the svg shapes, just include the class <code>mg-svg-button</code>.</p>
 				<div class="container">
 					<div class="third">
-						<button class="svg mg-action">Action button</button>
+						<button class="mg-svg-button mg-action">Action button</button>
 					</div>
 					<div class="third">
-						<button class="svg mg-cancel">Cancel button</button>
+						<button class="mg-svg-button mg-cancel">Cancel button</button>
 					</div>
 					<div class="third">
-						<button class="mg-simple">Simple button</button>
+						<button>Simple button</button>
 					</div>
 				</div>
 				<div class="container">
 					<div class="third">
-						<button class="svg mg-nav">Nav back</button>
+						<button class="mg-svg-button mg-nav">Nav back</button>
 					</div>
 				</div>
 
 				<hr />
 				<h2>Tabs</h2>
-				<p>Tabs typically reside outside of a panel, and thus float on their own.</p>
+				<p>Tabs typically reside outside of a panel, and thus float on their own. To utilize tabs, you will need to use the minified mobiStyle, or include the tabs library.</p>
 			</div>
 				<div class="mg-tab-group">
 					<ul class="mg-tab-list">
@@ -64,11 +65,30 @@
 						<section class="mg-tab-content" id="tab3">
 							<h2>The Late Philip J. Fry</h2>
 							<p>Who am I making this out to? For example, if you killed your grandfather, you'd cease to exist! I didn't ask for a completely reasonable excuse! I asked you to get busy! One hundred dollars. Switzerland is small and neutral! We are more like Germany, ambitious and misunderstood! Now what?</p>
-								<button class="mg-action svg">Buttons, too!</button>
 							
 						</section>
 					</div>
 				</div>
+			<div class="mg-panel">
+				<p>To create a tab group, use the following markup:</p>
+				<pre><code>
+&lt;div class="mg-tab-group"&gt;
+  &lt;ul class="mg-tab-list"&gt;
+    &lt;li&gt;&lt;a href="#" class="active" data-target="tab1"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" data-target="tab2"&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+    ...
+  &lt;/ul&gt;
+  &lt;div class="mg-panel"&gt;
+    &lt;section class="mg-tab-content active" id="tab1"&gt;
+	  &lt;!-- tab content --&gt;
+    &lt;/section&gt;
+    &lt;section class="mg-tab-content" id="tab2"&gt;
+	  &lt;!-- tab content --&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+				</code></pre>
+			</div>
 
 		</div>
 		<div class="mg-sidebar">
@@ -93,7 +113,10 @@
 	<div id="modalOverlay"></div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="scripts/snap.svg-min.js"></script>
-	<script src="scripts/mG.js"></script>
+	<script src="scripts/min/jquery.mobiStyle-min.js"></script>
+	<script>
+		$(document).mobiStyle();
+	</script>
 	
 </body>
 </html>

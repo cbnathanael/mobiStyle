@@ -230,6 +230,13 @@ textarea, select {
   textarea:disabled, select:disabled {
     box-shadow: none; }
 
+select option, select optgroup {
+  font-family: "Roboto", sans-serif;
+  color: #9fe3f6;
+  background: #2f4561; }
+  select option:disabled, select optgroup:disabled {
+    color: rgba(159, 227, 246, 0.3); }
+
 input[type="file"] {
   border-bottom: none; }
 
@@ -306,88 +313,92 @@ button {
   font-size: 1rem;
   letter-spacing: 1px;
   margin-bottom: 1rem;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  background: rgba(47, 69, 97, 0.6);
+  border: 2px solid rgba(159, 227, 246, 0.8);
+  padding: 0.5rem 1rem;
+  margin-top: 0.4rem;
+  min-width: 5rem;
+  text-align: center;
+  box-shadow: 0 0 0.375rem rgba(159, 227, 246, 0.5), inset 0 0 0.375rem rgba(159, 227, 246, 0.4); }
+  button:hover {
+    background: rgba(131, 161, 199, 0.3); }
   button + button {
     margin-left: 2rem; }
-  button.mg-simple {
-    background: rgba(47, 69, 97, 0.8);
-    border: 2px solid rgba(159, 227, 246, 0.8);
-    padding: 0.5rem 1rem;
-    margin-top: 0.4rem;
-    min-width: 5rem;
-    text-align: center;
-    box-shadow: 0 0 0.375rem rgba(159, 227, 246, 0.5), inset 0 0 0.375rem rgba(159, 227, 246, 0.4); }
-    button.mg-simple:hover {
-      background: rgba(131, 161, 199, 0.6); }
   button:focus {
     outline: none; }
-  button.mg-action, button.mg-cancel, button.mg-nav {
-    background: none;
-    border: none;
-    position: relative;
-    padding-top: 1rem;
-    padding-left: 1.15rem;
-    color: #AAFBCA;
-    transition: all 0.5s;
-    z-index: 2;
-    outline: none; }
-    button.mg-action svg, button.mg-cancel svg, button.mg-nav svg {
-      position: absolute;
-      top: 0;
-      left: -5px;
-      z-index: -1; }
-      button.mg-action svg path.body, button.mg-cancel svg path.body, button.mg-nav svg path.body {
-        fill: rgba(47, 69, 97, 0.2);
-        stroke: rgba(159, 227, 246, 0.8);
-        stroke-width: 2px;
+  button.mg-action {
+    color: #AAFBCA; }
+  button.mg-svg-button {
+    box-shadow: none;
+    text-align: left;
+    margin-top: 0.1rem; }
+    button.mg-svg-button.mg-action, button.mg-svg-button.mg-cancel, button.mg-svg-button.mg-nav {
+      background: none;
+      border: none;
+      position: relative;
+      padding-top: 1rem;
+      padding-left: 1.15rem;
+      transition: all 0.5s;
+      z-index: 2;
+      outline: none; }
+      button.mg-svg-button.mg-action svg, button.mg-svg-button.mg-cancel svg, button.mg-svg-button.mg-nav svg {
+        position: absolute;
+        top: 0;
+        left: -5px;
+        z-index: -1; }
+        button.mg-svg-button.mg-action svg path.body, button.mg-svg-button.mg-cancel svg path.body, button.mg-svg-button.mg-nav svg path.body {
+          fill: rgba(47, 69, 97, 0.2);
+          stroke: rgba(159, 227, 246, 0.8);
+          stroke-width: 2px;
+          transition: all 0.5s; }
+        button.mg-svg-button.mg-action svg path.outline, button.mg-svg-button.mg-cancel svg path.outline, button.mg-svg-button.mg-nav svg path.outline {
+          fill: transparent;
+          stroke: #9fe3f6;
+          stroke-width: 2px;
+          transition: all 0.5s; }
+      button.mg-svg-button.mg-action:hover, button.mg-svg-button.mg-cancel:hover, button.mg-svg-button.mg-nav:hover {
+        color: white;
         transition: all 0.5s; }
-      button.mg-action svg path.outline, button.mg-cancel svg path.outline, button.mg-nav svg path.outline {
-        fill: transparent;
-        stroke: #9fe3f6;
-        stroke-width: 2px;
-        transition: all 0.5s; }
-    button.mg-action:hover, button.mg-cancel:hover, button.mg-nav:hover {
+        button.mg-svg-button.mg-action:hover svg path.body, button.mg-svg-button.mg-cancel:hover svg path.body, button.mg-svg-button.mg-nav:hover svg path.body {
+          fill: rgba(117, 170, 162, 0.5);
+          stroke: white;
+          transition: all 0.5s; }
+        button.mg-svg-button.mg-action:hover svg path.outline, button.mg-svg-button.mg-cancel:hover svg path.outline, button.mg-svg-button.mg-nav:hover svg path.outline {
+          stroke: white;
+          transition: all 0.5s; }
+    button.mg-svg-button.mg-cancel {
+      color: #EF7878; }
+      button.mg-svg-button.mg-cancel svg path.body, button.mg-svg-button.mg-cancel svg path.outline {
+        stroke: #F69F9F; }
+      button.mg-svg-button.mg-cancel svg path.body {
+        fill: rgba(174, 57, 57, 0.05); }
+      button.mg-svg-button.mg-cancel:hover {
+        color: white; }
+        button.mg-svg-button.mg-cancel:hover svg path.body {
+          fill: rgba(239, 120, 120, 0.3);
+          stroke: #EF7878; }
+        button.mg-svg-button.mg-cancel:hover svg path.outline {
+          stroke: #EF7878; }
+    button.mg-svg-button.mg-nav {
       color: white;
-      transition: all 0.5s; }
-      button.mg-action:hover svg path.body, button.mg-cancel:hover svg path.body, button.mg-nav:hover svg path.body {
-        fill: rgba(117, 170, 162, 0.5);
+      position: relative;
+      font-size: 0.875rem;
+      padding-top: 0.875rem; }
+      button.mg-svg-button.mg-nav svg path.body {
+        fill: transparent;
         stroke: white;
-        transition: all 0.5s; }
-      button.mg-action:hover svg path.outline, button.mg-cancel:hover svg path.outline, button.mg-nav:hover svg path.outline {
+        shape-rendering: auto;
+        stroke-width: 2px; }
+      button.mg-svg-button.mg-nav svg path.outline {
         stroke: white;
-        transition: all 0.5s; }
-  button.mg-cancel {
-    color: #EF7878; }
-    button.mg-cancel svg path.body, button.mg-cancel svg path.outline {
-      stroke: #F69F9F; }
-    button.mg-cancel svg path.body {
-      fill: rgba(174, 57, 57, 0.05); }
-    button.mg-cancel:hover {
-      color: white; }
-      button.mg-cancel:hover svg path.body {
-        fill: rgba(239, 120, 120, 0.3);
-        stroke: #EF7878; }
-      button.mg-cancel:hover svg path.outline {
-        stroke: #EF7878; }
-  button.mg-nav {
-    color: white;
-    position: relative;
-    font-size: 0.875rem;
-    padding-top: 0.875rem; }
-    button.mg-nav svg path.body {
-      fill: transparent;
-      stroke: white;
-      shape-rendering: auto;
-      stroke-width: 2px; }
-    button.mg-nav svg path.outline {
-      stroke: white;
-      opacity: 0; }
-    button.mg-nav:hover {
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.9); }
-      button.mg-nav:hover svg path.body {
-        fill: transparent; }
-      button.mg-nav:hover svg path.outline {
-        opacity: 1; }
+        opacity: 0; }
+      button.mg-svg-button.mg-nav:hover {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.9); }
+        button.mg-svg-button.mg-nav:hover svg path.body {
+          fill: transparent; }
+        button.mg-svg-button.mg-nav:hover svg path.outline {
+          opacity: 1; }
 
 .mg-panel {
   max-width: 64rem;
@@ -416,11 +427,13 @@ img {
     box-shadow: 0 0 0.5rem #9fe3f6;
     transition: all 0.2s; }
 
-#mg-toast {
+.mg-toast {
   position: fixed;
   bottom: 1rem;
-  left: 1rem; }
-  #mg-toast .mg-toast-content {
+  left: 1rem;
+  transition: all 0.5s;
+  z-index: -200; }
+  .mg-toast .mg-toast-content {
     padding: 0.75rem 1rem;
     min-width: 15rem;
     z-index: 2;
@@ -442,33 +455,36 @@ img {
     -moz-perspective: 1300px;
     perspective: 1300px;
     transition: all 0.5s; }
-    #mg-toast .mg-toast-content h3 {
+    .mg-toast .mg-toast-content h3 {
       margin: 0 0 0.5rem; }
-    #mg-toast .mg-toast-content p {
+    .mg-toast .mg-toast-content p {
       margin: 0;
       padding-left: 0.5rem; }
-    #mg-toast .mg-toast-content svg {
+    .mg-toast .mg-toast-content svg {
       z-index: -1;
       position: absolute;
       top: -3px;
       left: -3px; }
-      #mg-toast .mg-toast-content svg path.body {
+      .mg-toast .mg-toast-content svg path.body {
         fill: rgba(47, 69, 97, 0.8);
         stroke: #9fe3f6;
         stroke-width: 2px; }
-      #mg-toast .mg-toast-content svg path.outline {
+      .mg-toast .mg-toast-content svg path.outline {
         fill: transparent;
         stroke: #9fe3f6;
         stroke-width: 2px; }
-  #mg-toast.mg-show .mg-toast-content {
-    -webkit-transform: translateZ(0px) translateX(0%) rotateY(0deg);
-    -moz-transform: translateZ(0px) translateX(0%) rotateY(0deg);
-    -ms-transform: translateZ(0px) translateX(0%) rotateY(0deg);
-    transform: translateZ(0px) translateX(0%) rotateY(0deg);
-    opacity: 1;
+  .mg-toast.mg-show {
+    z-index: 100;
     transition: all 0.5s; }
+    .mg-toast.mg-show .mg-toast-content {
+      -webkit-transform: translateZ(0px) translateX(0%) rotateY(0deg);
+      -moz-transform: translateZ(0px) translateX(0%) rotateY(0deg);
+      -ms-transform: translateZ(0px) translateX(0%) rotateY(0deg);
+      transform: translateZ(0px) translateX(0%) rotateY(0deg);
+      opacity: 1;
+      transition: all 0.5s; }
 
-#mg-modal {
+.mg-modal {
   position: fixed;
   top: 200%;
   left: 50%;
@@ -477,32 +493,32 @@ img {
   z-index: 200;
   transition: all 0.3s;
   padding: 0 1rem 0.5rem; }
-  #mg-modal .mg-modal-title {
+  .mg-modal .mg-modal-title {
     margin: 0.45rem 0 1rem;
     text-align: center; }
-  #mg-modal svg {
+  .mg-modal svg {
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1; }
-    #mg-modal svg path.body {
+    .mg-modal svg path.body {
       fill: rgba(47, 69, 97, 0.8);
       stroke: #9fe3f6;
       stroke-width: 2px; }
-    #mg-modal svg path.title {
+    .mg-modal svg path.title {
       fill: rgba(131, 161, 199, 0.8);
       stroke: #9fe3f6;
       stroke-width: 2px; }
-    #mg-modal svg path.outline {
+    .mg-modal svg path.outline {
       fill: transparent;
       stroke-width: 2px;
       stroke: #9fe3f6; }
-  #mg-modal.mg-show {
+  .mg-modal.mg-show {
     top: 50%;
     transition: all 0.3s; }
-    #mg-modal.mg-show ~ #mg-wrapper {
-      -webkit-filter: blur(1px);
-      -moz-filter: blur(1px);
+    .mg-modal.mg-show ~ #mg-wrapper {
+      -webkit-filter: blur(3px);
+      -moz-filter: blur(3px);
       filter: blur(3px);
       transform: scale(0.93);
       transition: all 0.4s; }

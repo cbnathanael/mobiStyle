@@ -9,7 +9,7 @@
 
 </head>
 <body>
-	<img id="mg-imgBG" src="img/Avenger.png" />
+	<img id="mg-imgBG" src="img/Avenger-blur.png" />
 	<div id="mg-scanlineBG"></div>
 	<img id="mg-gridBG" src="img/new-dot.png" alt="" />
 	<div id="mg-dotBG"></div>
@@ -18,6 +18,8 @@
 		<div class="mainContent">
 			<div class="mg-panel">
 				<h1>Forms &amp; Input</h1>
+				<p>These are the various styles applied to form elements. If you want to use the "inline label", you will either need to use the minified mobiStyle, or include the form library.</p>
+				
 				<form>
 				<fieldset>
 					<legend>Legend</legend>
@@ -25,11 +27,16 @@
 						<label for="text_field">Text Field:
 							<input type="text" id="text_field" />
 						</label>
-						<label for="text_field2" class="inline">
-							<span class="label">Text Field w/ inline label:</span>
+						<label for="text_field2" class="mg-inline">
+							<span class="mg-label">Text Field w/ inline label:</span>
 							<input type="text" id="text_field" />
 						</label>
-
+<pre><code>
+&lt;label for="text_field2" class="mg-inline"&gt;
+  &lt;span class="mg-label"&gt;Text Field w/ inline label:&lt;/span&gt;
+  &lt;input type="text" id="text_field" /&gt;
+&lt;/label&gt;
+</code></pre>
 						<label for="text_field_disabled">Disabled Text Field:
 							<input type="text" id="text_field_disabled" disabled value="I'm disabled" />
 						</label>
@@ -157,8 +164,10 @@
 	</section>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="scripts/snap.svg-min.js"></script>
-	<script src="scripts/mG.js"></script>
+	<script src="scripts/min/jquery.mobiStyle-min.js"></script>
 	
+	<script>
+		$(document).mobiStyle();
+	</script>
 </body>
 </html>

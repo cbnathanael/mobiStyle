@@ -9,19 +9,19 @@
 
 </head>
 <body>
-	<img id="mg-imgBG" src="img/Avenger.png" />
+	<img id="mg-imgBG" src="img/Avenger-blur.png" />
 	<div id="mg-scanlineBG"></div>
 	<img id="mg-gridBG" src="img/new-dot.png" alt="" />
 	<div id="mg-dotBG"></div>
-<div id="mg-modal" class="">
-		<h3 class="mg-modal-title">Modal Window</h3>
-		<div class="mg-modal-content">
-			<p>This is some information you need to know.</p>
-			<div class="container">
-				<button  id="closeModal" class="mg-simple right">OK</button>
-			</div>
+<div id="mgModal" class="mg-modal">
+	<h3 class="mg-modal-title">Modal Window</h3>
+	<div class="mg-modal-content">
+		<p>This is some information you need to know.</p>
+		<div class="container">
+			<button  id="closeModal" class="mg-simple right" data-mg-close-modal>OK</button>
 		</div>
 	</div>
+</div>
 	<section id="mg-wrapper">
 		<div class="mainContent">
 			<div class="mg-panel container">
@@ -67,8 +67,8 @@
 				<button class="svg mg-action" id="openToast">Load a toast</button>
 				<hr />
 				<h3>Modal Window</h3>
-				<button class="svg mg-action" id="openModal">Modal!</button>
-				<hr />
+				<button class="svg mg-action" id="openModal" data-mg-modal="mgModal">Modal!</button>
+				<!-- <hr />
 				<h3>Progress Bar</h3>
 					<div class="container">
 						<div class="third">
@@ -113,7 +113,7 @@
 						</div>
 					</div>
 
-				</div>
+				</div> -->
 			</div>
 
 		</div>
@@ -134,7 +134,7 @@
 
 		</div>
 	</section>
-	<div id="mg-toast">
+	<div class="mg-toast" id="mgToast">
 		<div class="mg-toast-content">
 			<h3>Title</h3>
 			<p>Message</p>
@@ -146,7 +146,17 @@
 	<div id="mg-modalOverlay"></div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="scripts/snap.svg-min.js"></script>
-	<script src="scripts/mG.js"></script>
+	<script src="scripts/jquery.mobiStyle.js"></script>
+	<script src="scripts/mobiStyle.svg.js"></script>
+	<script src="scripts/mobiStyle.buttons.js"></script>
+	<script src="scripts/mobiStyle.messages.js"></script>
+
+	<script>
+		$(document).mobiStyle();
+		$('#openToast').click(function(){
+			$('#mgToast').mobiStyle('messages', 'openToast');
+		});
+	</script>
 	
 </body>
 </html>
