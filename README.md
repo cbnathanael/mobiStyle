@@ -1,5 +1,5 @@
 # mobiStyle
-Web styles to recreate the Star Citizen mobiGlas experience
+Web styles to recreate the Star Citizen mobiGlas experience. [Check out the demo!](http://cbnathanael.github.io/mobiStyle)
 
 ## Prerequisites
 * jQuery 1.9+
@@ -10,3 +10,7 @@ Load the mobistyle.css file into your head, and jquery.mobistyle-min.js at the e
 ```javascript
 $(document).mobiStyle();
 ```
+
+## Copyright
+mobiGlas and all related elements are property of Cloud Imperium Games and Roberts Space Industries Corp.
+mobiStyle's css and js are released under a do-what-you-will license. Just give me a little credit if you ape my work, please?
